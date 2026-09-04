@@ -13,7 +13,7 @@ return {
 	opts = {
 		keymap = {
 			preset = "none",
-			[keybinds.super_c .. "-Enter>"] = { "accept" },
+			[keybinds.super_c .. "-S-Enter>"] = { "accept" },
 			[keybinds.super_c .. "-Down>"] = { "select_next" },
 			[keybinds.super_c .. "-Up>"] = { "select_prev" },
 			[keybinds.super_c .. "-Esc>"] = { "hide" },
