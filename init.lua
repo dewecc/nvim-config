@@ -1,8 +1,11 @@
-Xx0;9u≈vim.loader.enable()
+vim.loader.enable()
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 vim.o.number = true
 vim.o.mouse = 'a'
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.signcolumn = 'yes'
 vim.o.clipboard = 'unnamedplus'
 vim.o.confirm = true
@@ -23,34 +26,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
-
+require("keybinds")
 require("lazy").setup({
 	spec = {
-		-- Treesitter
-		{
-			"nvim-treesitter/nvim-treesitter",
-			lazy = false,
-			build = ':TSUpdate'
-		},
-		-- Trouble
-		{
-			"folke/trouble.nvim",
-		},
-		-- Mason lspconfig
-		{
-			"mason-org/mason-lspconfig.nvim",
-			dependencies = {
-				{ "mason-org/mason.nvim", opts = {} },
-				"neovim/nvim-lspconfig",
-			},
-			opts = {
-				ensure_installed = { "clangd", "autotools_ls", "rust_analyzer", "lua_ls" },
-				automatic_enable = true
-			},
-		}
-	},
-	checker = { enabled = true },
+		import = "plugins"
+	}
 })
