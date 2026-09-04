@@ -1,4 +1,4 @@
 return {
-	name = "neocmakelsp",
+	name = "neocmake",
 	config = {},
 }
