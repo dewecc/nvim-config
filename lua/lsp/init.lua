@@ -45,7 +45,7 @@ vim.notify("Servers found: " .. #servers)
 
 for i, v in ipairs(servers) do
 	vim.lsp.enable(v.name)
-	if v.config then
+	if v.config and vim.tbl_count(v.config) > 0 then
 		vim.lsp.config(v.name, v.config)
 	end
 end

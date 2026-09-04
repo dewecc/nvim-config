@@ -9,6 +9,7 @@ return {
 	build = function()
 		require("blink.cmp").build():pwait()
 	end,
+	lazy = false,
 
 	opts = {
 		keymap = {
@@ -22,4 +23,11 @@ return {
 		sources = { default = { "lsp", "path", "snippets", "buffer" } },
 		fuzzy = { implementation = "rust" },
 	},
+
+	config = function(_, opts)
+		require("blink.cmp").setup(opts)
+		vim.lsp.config("*", {
+			capabilities = require("blink.cmp").get_lsp_capabilities(),
+		})
+	end,
 }
