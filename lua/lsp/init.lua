@@ -19,8 +19,6 @@ local load_modules = function(path)
 
 		if not status then
 			vim.notify("Failed to load " .. file_path .. " due to " .. tostring(result))
-
-			goto continue
 		else
 			table.insert(tables, result)
 		end
@@ -44,10 +42,6 @@ end
 local servers = load_multi_modules("servers/lang", "servers/tools", "servers/web")
 
 vim.notify("Servers found: " .. #servers)
-
-if #servers == 0 then
-	return {}
-end
 
 for i, v in ipairs(servers) do
 	vim.lsp.enable(v.name)

@@ -1,4 +1,4 @@
 return {
-	name = "cmake",
+	name = "neocmakelsp",
 	config = {},
 }
