@@ -1,3 +1,3 @@
 return {
-	'akinsho/bufferline.nvim'
+	"akinsho/bufferline.nvim",
 }
